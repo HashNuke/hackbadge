@@ -21,10 +21,14 @@
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+
   <!-- CSS: implied media="all" -->
   <%= stylesheet_link_tag "style" %>
-
   <%= javascript_include_tag "modernizr", "scripts" %>
+
+  <%= csrf_meta_tags %>
 
 </head>
 
