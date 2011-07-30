@@ -1,7 +1,8 @@
 Hackbadge::Application.routes.draw do
 
-  resources :projects
+  get "github_api/repo_list"
 
+  resources :projects
   resources :events
 
   root :to => "main#landing"
