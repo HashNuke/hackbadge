@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(:version => 20110730131411) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "slug"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "start_date"
-    t.datetime "end_date"
   end
 
   create_table "projects", :force => true do |t|
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(:version => 20110730131411) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "token"
     t.string   "nickname"
     t.string   "gravatar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
