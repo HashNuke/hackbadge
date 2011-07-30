@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'omniauth'
+gem 'oa-oauth'
 gem 'jquery-rails'
 
 gem 'sprockets', ">=2.0.0.beta10"

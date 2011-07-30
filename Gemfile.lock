@@ -169,6 +169,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.0.rc)
   jquery-rails
+  oa-oauth
   omniauth
   rails (= 3.1.0.rc5)
   sass-rails (~> 3.1.0.rc)
