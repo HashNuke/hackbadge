@@ -14,7 +14,9 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find_by_slug(params[:id])
-
+    
+    @new_project = @event.projects.build
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }

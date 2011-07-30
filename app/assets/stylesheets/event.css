@@ -10,6 +10,19 @@
   font-size: 28px;
 }
 
+#main .left
+{
+  width: 864px;
+  height: auto;
+}
+
+#main .right
+{
+  width: 96px;
+  height: auto;
+  text-align: right;
+}
+
 #hackbadge
 {
   margin-top: 18px;

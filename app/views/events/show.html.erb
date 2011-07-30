@@ -1,13 +1,37 @@
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
+<%- content_for :header do %>
+  <%= stylesheet_link_tag "event" %>
+<%- end %>
 
-<p>
-  <b>Slug:</b>
-  <%= @event.slug %>
-</p>
+<div class="wrap clearfix" id="main" role="main">
+  <div class="left">
+    <h1><%= @event.name %></h1>
+  </div>
+  <div class="right">
+    <span class="add_project">Add project</span>
+    <%= form_for(@new_project) do |f| %>
+      <select class="user_repos">
+        
+      </select>
+      <%= f.hidden_field :name %>
+      <% f.submit :value=>"Add this project!" %>
+    <%- end %>
+  </div>
+  <div class="clearfix" id="hackbadge">
 
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+    <%- @event.projects.each do |p| %>
+      <div class="thebadge left">
+        <h2><%= p.name %></h2>
+        <%= link_to "TODO link", "" %>
+        <p><%= p.description %></p>
+        <div class="center">
+          <%- p.contributors.each do |c| %>
+            <img src="img/user.png" />ImgHere
+          <%- end %>
+        </div>
+        <div class="likes">
+          <p>76 Likes <a href="javascript:void(0);"><img src="img/likeDefault.png" /></a>
+        </div>
+      </div>
+    <%- end %>
+  </div>
+</div>

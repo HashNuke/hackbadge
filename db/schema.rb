@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730183938) do
+ActiveRecord::Schema.define(:version => 20110730201637) do
 
   create_table "commits", :force => true do |t|
     t.integer  "project_id"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20110730183938) do
     t.string   "author_email"
     t.integer  "author_user_id"
     t.datetime "commit_timestamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contributors", :force => true do |t|
+    t.string   "nickname"
+    t.text     "avatar_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20110730183938) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.string   "project_url"
   end
 
   create_table "users", :force => true do |t|
