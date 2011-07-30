@@ -1,21 +1,24 @@
 <%- content_for :header do %>
   <%= stylesheet_link_tag "event" %>
+  <%= javascript_include_tag "new_project" %>
 <%- end %>
 
 <div class="wrap clearfix" id="main" role="main">
   <div class="left">
     <h1><%= @event.name %></h1>
   </div>
-  <div class="right">
-    <span class="add_project">Add project</span>
-    <%= form_for(@new_project) do |f| %>
-      <select class="user_repos">
-        
-      </select>
-      <%= f.hidden_field :name %>
-      <% f.submit :value=>"Add this project!" %>
-    <%- end %>
-  </div>
+  <%- if user_logged_in? %>
+    <div class="right">
+      <span class="add_project">Add project</span>
+      <%= form_for(@new_project, :class=>"new_project") do |f| %>
+        <select class="user_repos"></select>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :event_id %>
+        <% f.submit :value=>"Add this project!" %>
+      <%- end %>
+    </div>
+  <%- end %>
+
   <div class="clearfix" id="hackbadge">
 
     <%- @event.projects.each do |p| %>
