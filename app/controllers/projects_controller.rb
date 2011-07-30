@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+  before_filter :authenticate_user!, :only=>[:new, :create]
+  
   # GET /projects
   # GET /projects.json
   def index
@@ -10,6 +13,7 @@ class ProjectsController < ApplicationController
     end
   end
 
+=begin
   # GET /projects/1
   # GET /projects/1.json
   def show
@@ -36,6 +40,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
   end
+=end
 
   # POST /projects
   # POST /projects.json
@@ -52,6 +57,8 @@ class ProjectsController < ApplicationController
       end
     end
   end
+
+=begin
 
   # PUT /projects/1
   # PUT /projects/1.json
@@ -80,4 +87,6 @@ class ProjectsController < ApplicationController
       format.json { head :ok }
     end
   end
+=end
+
 end
