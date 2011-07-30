@@ -47,7 +47,8 @@
             <a href="/auth/github">
               <% if current_user %>
                 Welcome <%= current_user.name %>!
-                <%= link_to "Logout", logout_path %>
+                <%= link_to "Logout", logout_path %> <%= image_tag("github.png") %>
+
               <% else %>
                 Login with GitHub <%= image_tag("github.png") %>
               <% end %>
