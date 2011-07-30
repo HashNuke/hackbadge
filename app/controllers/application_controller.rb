@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :authenticate_user!
   helper_method :user_logged_in?
+  before_filter :current_user
 
   private
 
@@ -23,6 +24,7 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate_user!
+    current_user
     unless current_user
       if request.xhr?
         render :json => "not authorized", :status => :unprocessable_entity

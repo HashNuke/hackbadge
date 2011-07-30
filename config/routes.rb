@@ -11,7 +11,10 @@ Hackbadge::Application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/logout" => "sessions#destroy", :as => :logout
-  
+
+  match "/github_api/repo_list/" => "github_api#repos_list"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

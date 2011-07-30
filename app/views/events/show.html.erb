@@ -14,9 +14,11 @@
         <select class="user_repos"></select>
         <%= f.hidden_field :name %>
         <%= f.hidden_field :event_id %>
-        <% f.submit :value=>"Add this project!" %>
+        <%= f.submit :value=>"Add this project!" %>
       <%- end %>
     </div>
+  <%- else %>
+    what?
   <%- end %>
 
   <div class="clearfix" id="hackbadge">

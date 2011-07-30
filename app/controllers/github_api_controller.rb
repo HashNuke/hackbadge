@@ -1,11 +1,12 @@
 class GithubApiController < ApplicationController
   
   before_filter :authenticate_user!, :only=>[:repo_list]
-  
+  before_filter :set_api
+
   def repo_list
     access_token = current_user.token
-    call_url = @base_url + "/user/repos?access_token=" + access_token
-
+    call_url = @base_url + "user/repos?access_token=" + access_token
+    logger.debug call_url
     result = Nestful.get(call_url)
     respond_to do |format|
       format.json do
@@ -19,7 +20,7 @@ class GithubApiController < ApplicationController
     @project = Project.includes(:user).find(project_id)
     access_token = current_user.token
 
-    call_url = @base_url + "/repos/" + @project.user.nickname + "/" + @project.name + "/commits?access_token=" + access_token
+    call_url = @base_url + "repos/" + @project.user.nickname + "/" + @project.name + "/commits?access_token=" + access_token
 
     result = Nestful.get(call_url)
     logger.debug result.inspect
@@ -35,7 +36,7 @@ class GithubApiController < ApplicationController
     @project = Project.includes(:user).find(project_id)
     access_token = current_user.token
 
-    call_url = @base_url + "/repos/" + @project.user.nickname + "/" + @project.name + "?access_token=" + access_token
+    call_url = @base_url + "repos/" + @project.user.nickname + "/" + @project.name + "?access_token=" + access_token
 
     result = Nestful.get(call_url)
     unless result.nil?
