@@ -179,7 +179,6 @@ DEPENDENCIES
   jquery-rails
   omniauth!
   rails (= 3.1.0.rc5)
-  rake (= 0.8.7)
   sass-rails (~> 3.1.0.rc)
   sqlite3
   therubyracer
