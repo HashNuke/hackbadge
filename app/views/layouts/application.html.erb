@@ -47,6 +47,7 @@
             <a href="/auth/github">
               <% if current_user %>
                 Welcome <%= current_user.name %>!
+                <%= link_to "Add Hackathon",new_event_path %>
                 <%= link_to "Logout", logout_path %> <%= image_tag("github.png") %>
 
               <% else %>
@@ -57,6 +58,10 @@
         </div>
       </div>
     </header>
+  
+    <%- if notice %>
+      <div class="notice"><%= notice %></div>
+    <%- end %>
 
     <%= yield %>
 

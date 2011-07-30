@@ -1,3 +1,8 @@
+<%- content_for :header do %>
+  <%= stylesheet_link_tag "new_event" %>
+<%- end %>
+
+<div id="form">
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -11,24 +16,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br />
-    <%= f.date_select :slug %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br />
-    <%= f.text_field :slug %>
-  </div>
+  <%= f.text_field :name, :class=>"createInput" %>
+  <br/>
+  <%= f.text_field :slug, :class=>"createInput" %>
+  <br/>
+  <%= f.date_select :start_date, :class=>"l" %>
+  <%= f.date_select :end_date, :class=>"l" %>
+  
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=>"createSubmit", :value=>"Create hackathon" %>
   </div>
 <% end %>
+</div>
