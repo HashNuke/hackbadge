@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  github_repo_name: MyString
+  user_id: 1
+  private_repo: false
+  event_id: 1
+
+two:
+  name: MyString
+  github_repo_name: MyString
+  user_id: 1
+  private_repo: false
+  event_id: 1

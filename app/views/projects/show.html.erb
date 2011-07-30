@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Github repo name:</b>
+  <%= @project.github_repo_name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <b>Private repo:</b>
+  <%= @project.private_repo %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @project.event_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
