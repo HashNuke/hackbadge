@@ -16,9 +16,18 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.datetime_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.datetime_select :slug %>
+  </div>
+  <div class="field">
     <%= f.label :slug %><br />
     <%= f.text_field :slug %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
