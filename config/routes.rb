@@ -1,5 +1,9 @@
 Hackbadge::Application.routes.draw do
 
+  resources :events
+
+  root :to => "main#landing"
+
   get "main/landing"
 
   match "/auth/:provider/callback" => "sessions#create"
