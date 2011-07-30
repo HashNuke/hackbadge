@@ -15,7 +15,6 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'octokit'
 gem 'omniauth'
 gem 'oa-oauth'
 gem 'jquery-rails'
