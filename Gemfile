@@ -7,21 +7,22 @@ gem 'rails', '3.1.0.rc5'
 
 gem 'sqlite3'
 
-gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'therubyracer'
   gem 'sass-rails', "~> 3.1.0.rc"
   # gem 'coffee-rails', "~> 3.1.0.rc"
   gem 'uglifier'
 end
 
-gem 'omniauth'
 gem 'oa-oauth'
+gem 'omniauth'
+
 gem 'jquery-rails'
 
-gem 'sprockets', ">=2.0.0.beta12"
+# gem 'sprockets', ">=2.0.0.beta12"
 
 # Use unicorn as the web server
 # gem 'unicorn'
