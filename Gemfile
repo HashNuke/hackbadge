@@ -21,7 +21,7 @@ gem 'omniauth'
 gem 'oa-oauth'
 gem 'jquery-rails'
 
-gem 'sprockets', ">=2.0.0.beta10"
+gem 'sprockets', ">=2.0.0.beta12"
 
 # Use unicorn as the web server
 # gem 'unicorn'

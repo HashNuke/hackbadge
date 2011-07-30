@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project_id: 1
+  commit_sha: MyText
+  author_name: MyString
+  author_email: MyString
+  author_user_id: 1
+  commit_timestamp: 2011-07-30 19:13:04
+
+two:
+  project_id: 1
+  commit_sha: MyText
+  author_name: MyString
+  author_email: MyString
+  author_user_id: 1
+  commit_timestamp: 2011-07-30 19:13:04

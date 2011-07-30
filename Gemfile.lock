@@ -176,7 +176,7 @@ DEPENDENCIES
   omniauth
   rails (= 3.1.0.rc5)
   sass-rails (~> 3.1.0.rc)
-  sprockets (>= 2.0.0.beta10)
+  sprockets (>= 2.0.0.beta12)
   sqlite3
   therubyracer
   turn
