@@ -32,6 +32,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.4)
     ansi (1.3.0)
+    api_cache (0.2.3)
     arel (2.1.4)
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
@@ -44,6 +45,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.1)
+    crack (0.1.8)
     erubis (2.7.0)
     execjs (1.2.0)
       multi_json (~> 1.0)
@@ -52,6 +54,8 @@ GEM
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
     hike (1.2.0)
+    httparty (0.7.8)
+      crack (= 0.1.8)
     i18n (0.6.0)
     jquery-rails (1.0.12)
       railties (~> 3.0)
@@ -60,10 +64,17 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mechanize (2.0.1)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 1.8)
+      nokogiri (~> 1.4)
+      webrobots (~> 0.0, >= 0.0.9)
     mime-types (1.16)
     multi_json (1.0.3)
     multi_xml (0.2.2)
     multipart-post (1.1.2)
+    net-http-digest_auth (1.1.1)
+    net-http-persistent (1.8)
     net-ldap (0.2.2)
     nokogiri (1.4.6)
     oa-basic (0.2.6)
@@ -96,6 +107,11 @@ GEM
     oauth2 (0.4.1)
       faraday (~> 0.6.1)
       multi_json (>= 0.0.5)
+    octopi (0.4.5)
+      api_cache
+      httparty (>= 0.4.5)
+      mechanize (>= 0.9.3)
+      nokogiri (>= 1.3.1)
     omniauth (0.2.6)
       oa-basic (= 0.2.6)
       oa-core (= 0.2.6)
@@ -162,6 +178,8 @@ GEM
     uglifier (1.0.0)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    webrobots (0.0.10)
+      nokogiri (>= 1.4.4)
 
 PLATFORMS
   ruby
@@ -170,6 +188,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0.rc)
   jquery-rails
   oa-oauth
+  octopi
   omniauth
   rails (= 3.1.0.rc5)
   sass-rails (~> 3.1.0.rc)
