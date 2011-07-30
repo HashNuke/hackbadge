@@ -13,12 +13,12 @@ gem 'sqlite3'
 group :assets do
   gem 'therubyracer'
   gem 'sass-rails', "~> 3.1.0.rc"
-  # gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'coffee-rails', "~> 3.1.0.rc"
   gem 'uglifier'
 end
 
-gem 'oa-oauth'
-gem 'omniauth'
+gem 'omniauth', :git=>"https://github.com/intridea/omniauth.git"
+# gem 'oa-oauth'
 
 gem 'jquery-rails'
 
