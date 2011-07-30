@@ -12,6 +12,8 @@ class GithubApiController < ApplicationController
   def repo_committers_info
   end
 
-  
+  # get and reset github info in out db (contributors etc)
+  def reset_github_info
+  end
 
 end
