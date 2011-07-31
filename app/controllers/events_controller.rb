@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate_user! :only=>[:new, :create]
+  before_filter :authenticate_user!, :only=>[:new, :create]
 
   # GET /events
   # GET /events.json

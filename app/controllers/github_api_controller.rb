@@ -1,8 +1,7 @@
 class GithubApiController < ApplicationController
   
   before_filter :authenticate_user!, :only=>[:repo_list]
-  before_filter :set_api
-
+  
   def repo_list
     access_token = current_user.token
     call_url = @base_url + "user/repos?access_token=" + access_token
@@ -52,8 +51,5 @@ class GithubApiController < ApplicationController
   def reset_github_info
   end
 
-  def set_api
-    @base_url = "https://api.github.com/"
-  end
-
+  
 end

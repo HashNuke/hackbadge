@@ -46,11 +46,43 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+    @project.user_id = @current_user.id
 
     respond_to do |format|
       if @project.save
+
+        access_token = current_user.token
+
+        call_url = @base_url + "repos/" + @current_user.nickname + "/" + @project.name + "/contributors?access_token=" + access_token
+        logger.debug "REPO INFO CALL URL" + call_url
+        result = Nestful.get(call_url)
+        #logger.debug "REPO INFO: #{result.inspect}"
+        result = JSON.parse(result)
+        result.each do |c|
+          new_c = Contributor.new :project_id=>@project.id, :nickname=>c["login"], :avatar_url=>c["avatar_url"]
+          new_c.save
+        end
+
+
+        call_url = @base_url + "repos/" + @current_user.nickname + "/" + @project.name + "/commits?access_token=" + access_token
+        logger.debug "COMMIT CALL URL" + call_url
+        result = Nestful.get(call_url)
+        #logger.debug "COMMITS: #{result.inspect}"
+
+        result = JSON.parse(result)
+        result.each do |c|
+          logger.debug "AKASH"
+          logger.debug c.inspect
+          logger.debug c["author"].inspect
+          new_c = Commit.new(:project_id=>@project.id,
+            :commit_timestamp=>DateTime.parse(c["commit"]["author"]["date"]),
+            :author_name => c["commit"]["author"]["name"],
+            :commit_msg => c["commit"]["message"])
+          new_c.save
+        end
+
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render json: @project, status: :created, location: @project }
+        format.json { render json: @project, status: :created, location: @project.event }
       else
         format.html { render action: "new" }
         format.json { render json: @project.errors, status: :unprocessable_entity }

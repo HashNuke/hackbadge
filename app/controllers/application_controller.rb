@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :authenticate_user!
   helper_method :user_logged_in?
   before_filter :current_user
+  before_filter :set_api
 
   private
 
@@ -32,6 +33,10 @@ class ApplicationController < ActionController::Base
         redirect_to root_url
       end
     end
+  end
+  
+  def set_api
+    @base_url = "https://api.github.com/"
   end
 
 end
