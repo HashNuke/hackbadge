@@ -71,9 +71,6 @@ class ProjectsController < ApplicationController
 
         result = JSON.parse(result)
         result.each do |c|
-          logger.debug "AKASH"
-          logger.debug c.inspect
-          logger.debug c["author"].inspect
           new_c = Commit.new(:project_id=>@project.id,
             :commit_timestamp=>DateTime.parse(c["commit"]["author"]["date"]),
             :author_name => c["commit"]["author"]["name"],
