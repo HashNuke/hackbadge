@@ -202,6 +202,26 @@ header .right a:hover
   color: #BEBEBE;
 }
 
+div.notice
+{
+  border: 1px solid #CFB642;
+  padding: 4px;
+  background-color: #F5E69F;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  width: 950px;
+  height: auto;
+}
+
+div.notice p
+{
+  font-size: 12px;
+  color: #000000;
+  font-weight: bold;
+}
+
 
 /*----- FOOTER STYLES -----*/
 
