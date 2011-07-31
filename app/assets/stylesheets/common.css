@@ -207,8 +207,6 @@ header .right a:hover
 
 div#footer
 {
-  position: absolute;
-  bottom: 0;
   padding: 14px 0px;
   background-color: #464747;
   text-align: center;
