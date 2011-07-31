@@ -16,6 +16,8 @@
       <%= form_for(@new_project, :class=>"new_project") do |f| %>
         <select class="user_repos"></select>
         <%= f.hidden_field :name %>
+        <%= f.hidden_field :project_url %>
+        <%= f.hidden_field :description %>
         <%= f.hidden_field :event_id %>
         <%= f.submit :value=>"Add this project!" %>
       <%- end %>
@@ -35,7 +37,7 @@
           <%- end %>
         </div>
         <div class="likes">
-          <p>76 Likes <a href="javascript:void(0);"><img src="img/likeDefault.png" /></a>
+          <p>76 Likes <a href="javascript:void(0);"><% image_tag("likeDefault.png") %></a>
         </div>
       </div>
     <%- end %>
