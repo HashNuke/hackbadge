@@ -33,6 +33,15 @@
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="js/libs/modernizr-1.7.min.js"></script>
 
+<!-- Graph Stuff  -->
+
+  <link rel="stylesheet" href="css/graph.css" type="text/css" media="screen">
+  <script src="js/raphael.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/analytics.js"></script>
+
+<!-- End of Graph Stuff  -->
 </head>
 
 <body>
@@ -50,6 +59,26 @@
         </div>
       </div>
     </header>
+
+	<!--  Graph Stuff -->
+	<center><h1>Commit Trends</h1></center>
+		 <table id="data">
+	            <tfoot>
+	                <tr id = "hour_intervals">
+	                </tr>
+	            </tfoot>
+	            <tbody>
+	                <tr id="values">
+	                </tr>
+	            </tbody>
+	        </table>
+
+	     <div class="wrap">
+	 		<div id="holder"></div>
+	<center><p>Hours</p></center>
+	     </div> 
+	<!-- End of Graph Stuff -->
+	
     <div class="wrap clearfix" id="main" role="main">
       <h1>Project Name</h1>
       <div class="clearfix" id="hackbadge">
