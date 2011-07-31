@@ -14,4 +14,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def voted_for?(projectID)
+    if Project.find(projectID).votes.exists?(:user_id=>self.id)
+      return true
+    else
+      return false
+    end
+  end
+
 end

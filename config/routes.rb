@@ -4,6 +4,7 @@ Hackbadge::Application.routes.draw do
 
   resources :projects
   resources :events
+  resources :votes
 
   root :to => "main#landing"
 

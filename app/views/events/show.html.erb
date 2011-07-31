@@ -3,6 +3,9 @@
   <%= javascript_include_tag "new_project" %>
   <script type="text/javascript">
     var commit_stamps = <%= @commits %>;
+    $(document).ready(function(){
+      
+    });
   </script>
 <%- end %>
 
@@ -36,9 +39,17 @@
             <%= image_tag c.avatar_url %>
           <%- end %>
         </div>
+        
         <div class="likes">
-          <p><%= pluralize p.votes_count, "votes" %> <a href="javascript:void(0);">
-            <%= image_tag("likeDefault.png") %></a>
+          <p>
+            <span class="votes"><%= p.votes_count %></span>
+            <%- if user_logged_in? and !@current_user.voted_for?(p.id) and (@current_user.id != p.user_id) %>
+              <%= form_for p.votes.build(:user_id=>@current_user.id), :remote=>true, :html=>{:'data-type'=>'html', :class=>'voting_form'} do |f| %>
+              
+                <%= f.hidden_field :project_id, :value => p.id %>
+                <%= image_submit_tag 'likeDefault.png', :class=>"vote_button" %>
+              <%- end %>
+          <%- end %>
           </p>
         </div>
       </div>
