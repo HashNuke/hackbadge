@@ -37,7 +37,9 @@
           <%- end %>
         </div>
         <div class="likes">
-          <p>76 Likes <a href="javascript:void(0);"><% image_tag("likeDefault.png") %></a>
+          <p><%= pluralize p.votes_count, "votes" %> <a href="javascript:void(0);">
+            <%= image_tag("likeDefault.png") %></a>
+          </p>
         </div>
       </div>
     <%- end %>

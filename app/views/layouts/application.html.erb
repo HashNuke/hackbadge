@@ -46,8 +46,7 @@
           <p>
             <a href="/auth/github">
               <% if current_user %>
-                Welcome <%= current_user.name %>!
-                <%= link_to "Add Hackathon",new_event_path %>
+                Welcome <%= current_user.name %>
                 <%= link_to "Logout", logout_path %> <%= image_tag("github.png") %>
 
               <% else %>

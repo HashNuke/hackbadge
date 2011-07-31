@@ -193,6 +193,7 @@ header .right p
 header .right a:link, header .right a:visited
 {
   text-decoration: none;
+  margin-left:20px;
   color: #FFFFFF;
 }
 
