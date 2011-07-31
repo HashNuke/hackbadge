@@ -31,7 +31,7 @@
         <p><%= p.description %></p>
         <div class="center">
           <%- p.contributors.each do |c| %>
-            <img src="img/user.png" />ImgHere
+            <%= image_tag c.avatar_url %>
           <%- end %>
         </div>
         <div class="likes">
