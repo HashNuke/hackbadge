@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110731002851) do
+ActiveRecord::Schema.define(:version => 20110731031512) do
 
   create_table "commits", :force => true do |t|
     t.integer  "project_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20110731002851) do
     t.datetime "updated_at"
     t.text     "description"
     t.string   "project_url"
+    t.integer  "votes_count",      :default => 0
   end
 
   create_table "users", :force => true do |t|
@@ -60,6 +61,13 @@ ActiveRecord::Schema.define(:version => 20110731002851) do
     t.string   "token"
     t.string   "nickname"
     t.string   "gravatar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
