@@ -29,7 +29,7 @@
     <%- @event.projects.each do |p| %>
       <div class="thebadge left">
         <h2><%= p.name %></h2>
-        <%= link_to "TODO link", "" %>
+        <%= link_to "go to app &rarr;".html_safe, p.project_url %>
         <p><%= p.description %></p>
         <div class="center">
           <%- p.contributors.each do |c| %>

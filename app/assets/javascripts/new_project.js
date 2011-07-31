@@ -24,7 +24,7 @@ $(document).ready(function(){
     
       $("#project_name").val(repo['name']);
       $("#project_description").val(repo['description']);
-      $("#project_url").val(repo['homepage']);
+      $("#project_project_url").val(repo['homepage']);
     });
   
   });
@@ -35,7 +35,7 @@ $(document).ready(function(){
       
       $("#project_name").val(repo['name']);
       $("#project_description").val(repo['description']);
-      $("#project_url").val(repo['homepage']);
+      $("#project_project_url").val(repo['homepage']);
   });
 
 });
