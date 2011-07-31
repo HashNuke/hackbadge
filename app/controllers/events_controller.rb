@@ -19,8 +19,16 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find_by_slug(params[:id])
+
+    pre_commits = Commit.order(:commit_timestamp).select(:commit_timestamp)
+
+    @commits = []
+    pre_commits.each do |c|
+      @commits.push c.commit_timestamp.to_i
+    end
+
     if user_logged_in?
-      @new_project = Project.new(:event_id=>@event_id)
+      @new_project = Project.new(:event_id=>@event.id)
     end
     respond_to do |format|
       format.html # show.html.erb

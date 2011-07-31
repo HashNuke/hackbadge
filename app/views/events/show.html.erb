@@ -1,6 +1,9 @@
 <%- content_for :header do %>
   <%= stylesheet_link_tag "event" %>
   <%= javascript_include_tag "new_project" %>
+  <script type="text/javascript">
+    var commit_stamps = <%= @commits %>;
+  </script>
 <%- end %>
 
 <div class="wrap clearfix" id="main" role="main">
@@ -17,8 +20,6 @@
         <%= f.submit :value=>"Add this project!" %>
       <%- end %>
     </div>
-  <%- else %>
-    what?
   <%- end %>
 
   <div class="clearfix" id="hackbadge">

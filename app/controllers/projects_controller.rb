@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
         end
 
 
-        call_url = @base_url + "repos/" + @current_user.nickname + "/" + @project.name + "/commits?access_token=" + access_token
+        call_url = @base_url + "repos/" + @current_user.nickname + "/" + @project.name + "/commits?per_page=100&access_token=" + access_token
         logger.debug "COMMIT CALL URL" + call_url
         result = Nestful.get(call_url)
         #logger.debug "COMMITS: #{result.inspect}"
@@ -78,7 +78,7 @@ class ProjectsController < ApplicationController
           new_c.save
         end
 
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to @project.event, notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project.event }
       else
         format.html { render action: "new" }
