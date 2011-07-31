@@ -4,7 +4,7 @@ class GithubApiController < ApplicationController
   
   def repo_list
     access_token = current_user.token
-    call_url = @base_url + "user/repos?access_token=" + access_token
+    call_url = @base_url + "users/" + @current_user.nickname + "/repos"
     logger.debug call_url
     result = Nestful.get(call_url)
     respond_to do |format|
